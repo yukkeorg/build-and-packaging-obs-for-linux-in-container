@@ -1,7 +1,9 @@
 UBUNTU_IMAGE_TAG := kinetic
-OBS_GIT_TAG := 28.1.2
-DOCKER_IMAGE_TAG := build-obs-studio
-CONTAINER_NAME := $(DOCKER_IMAGE_TAG)-$(shell date +%s)
+#OBS_GIT_TAG := master
+OBS_GIT_TAG := 29.0.2
+DOCKER_TAG_BASE := build-obs-studio
+DOCKER_IMAGE_TAG := $(DOCKER_TAG_BASE):$(OBS_GIT_TAG)
+CONTAINER_NAME := $(DOCKER_TAG_BASE)-$(shell date +%s)
 
 
 all: copy_to_local
